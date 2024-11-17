@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            text-align: center;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1>URl SHORTENER</h1>
+    <form method="post" action="/url/convert"  class="f1"> 
+        <p>Please fill this field in this format:- http://expamle.com </p> 
+     <label>Enter your Url</label>
+      <input  type="text" name="url" placeholder="http://expamle.com" value="http://">
+      <button type="submit">Genrate</button>
+    </form>
+    </div>
+    <div style="text-align: center;">
+           <% if (locals.userfinded) { %>
+                <h3><%= userfinded.name %></h3>
+                <h3><%= userfinded.Email %></h3>
+        
+           <% } %>
+    </div>
+    <div style="text-align: center;">
+        <% if (locals.id) { %>
+              <h2>your shorturl is <span style="color: rgb(0, 187, 255);">http://localhost:8001/<%= id%></span>
+            </h2>
+        <% } %>
+          
+     </div>
+     <div style="margin: 20px;">
+        <% if (locals.result) { %>
+             <table border="2px" align="center">
+                  <thead>
+                    <tr>
+                        <th>Url</th>
+                        <th>Shortid</th>
+                        <th>Clicks</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                          <% result.forEach(result => { %>
+                              <tr>
+                              <td><%= result.redirecturl %></td>
+                              <td><%= result.shortenurl %></td>
+                              <td><%= result.visitedhistory.length %></td>
+
+                              </tr>
+
+                          <% }) %>
+                    
+
+
+                  
+                    
+                  </tbody>
+             </table>
+        <% } %>
+     </div>
+    <div>
+       
+    
+</body>
+</html>

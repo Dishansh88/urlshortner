@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <div>
+         <% if (locals.error) { %>
+             <h1><%= error %></h1>
+         <% } %>
+        <form action="/create/user" method="post">
+        
+        <label>Name</label><br>
+          <input type="text" name="name" ><br>
+        <label>EMAil</label><br>
+          <input type="text" name="Email" required><br>
+         <label>password</label><br>
+          <input type="password" name="password" required> 
+         <button type="submit">submit</button>
+        </form>
+     </div>
+
+</body>
+</html>
